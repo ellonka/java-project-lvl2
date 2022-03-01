@@ -6,3 +6,14 @@ run-dist:
 
 check-updates:
 	./gradlew dependencyUpdates
+
+lint:
+	./gradlew checkstyleMain
+
+test:
+	./gradlew test
+
+build: lint test
+	./gradlew clean build
+
+.PHONY: build
