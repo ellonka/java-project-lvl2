@@ -8,6 +8,9 @@
 ### Github Actions:
 [![Build](https://github.com/ellonka/java-project-lvl2/actions/workflows/build-actions.yml/badge.svg?branch=main)](https://github.com/ellonka/java-project-lvl2/actions/workflows/build-actions.yml)
 
-### How it works:
+### How it works with simple json files:
 [![asciicast](https://asciinema.org/a/09mZA4ePjE47Iy95fzrf3ooDi.svg)](https://asciinema.org/a/09mZA4ePjE47Iy95fzrf3ooDi)
+
+### How it works with simple yaml files:
+[![asciicast](https://asciinema.org/a/yUY5KOU6Gzbq54ug3dq719J8C.svg)](https://asciinema.org/a/yUY5KOU6Gzbq54ug3dq719J8C)
 
