@@ -6,6 +6,7 @@
  */
 plugins {
     id 'com.github.ben-manes.versions' version '0.39.0'
+    id 'com.adarshr.test-logger' version '3.2.0'
     id 'application'
     id 'checkstyle'
     id 'jacoco'
@@ -43,4 +44,8 @@ jacocoTestReport {
     reports {
         xml.required = true
     }
+}
+
+testlogger {
+    showStandardStreams true
 }
