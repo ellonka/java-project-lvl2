@@ -34,4 +34,7 @@ run-complex-yml:
 run-plain-format:
 	./build/install/app/bin/app -f plain ./src/test/resources/file3.json ./src/test/resources/file4.json
 
+run-json-format:
+	./build/install/app/bin/app -f json ./src/test/resources/file1.json ./src/test/resources/file2.json
+
 .PHONY: build

@@ -146,4 +146,34 @@ class DifferTest {
                 + "Property 'setting3' was updated. From true to 'none'\n";
         assertEquals(expected, Differ.generate(pathToFile3, pathToFile4, "plain"));
     }
+
+    @Test
+    public void testDifferBetweenTwoFilesWithJson() throws IOException {
+        String pathToFile3 = "./src/test/resources/file1.json";
+        String pathToFile4 = "./src/test/resources/file2.json";
+
+        String expected = "{\n"
+                + "  \"follow\" : {\n"
+                + "    \" - \" : false,\n"
+                + "    \" + \" : null\n"
+                + "  },\n"
+                + "  \"host\" : {\n"
+                + "    \" - \" : \"hexlet.io\",\n"
+                + "    \" + \" : \"hexlet.io\"\n"
+                + "  },\n"
+                + "  \"proxy\" : {\n"
+                + "    \" - \" : \"123.234.53.22\",\n"
+                + "    \" + \" : null\n"
+                + "  },\n"
+                + "  \"timeout\" : {\n"
+                + "    \" - \" : 50,\n"
+                + "    \" + \" : 20\n"
+                + "  },\n"
+                + "  \"verbose\" : {\n"
+                + "    \" - \" : null,\n"
+                + "    \" + \" : true\n"
+                + "  }\n"
+                + "}";
+        assertEquals(expected, Differ.generate(pathToFile3, pathToFile4, "json"));
+    }
 }

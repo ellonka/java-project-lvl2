@@ -19,11 +19,11 @@ public class Differ {
         Formatter.chooseFormat(format);
         for (String key: exchanger.keySet()) {
             if (!mapFromFile1.containsKey(key)) {
-                Formatter.collect("ADDED", key, null, mapFromFile2.get(key));
+                Formatter.collect("ADDED", key, mapFromFile1.get(key), mapFromFile2.get(key));
             } else if (!mapFromFile2.containsKey(key)) {
-                Formatter.collect("DELETED", key, mapFromFile1.get(key), null);
+                Formatter.collect("DELETED", key, mapFromFile1.get(key), mapFromFile2.get(key));
             } else if (Objects.equals(mapFromFile2.get(key), mapFromFile1.get(key))) {
-                Formatter.collect("UNCHANGED", key, mapFromFile1.get(key), null);
+                Formatter.collect("UNCHANGED", key, mapFromFile1.get(key), mapFromFile2.get(key));
             } else {
                 Formatter.collect("UPDATED", key, mapFromFile1.get(key), mapFromFile2.get(key));
             }

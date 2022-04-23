@@ -7,6 +7,7 @@ public class Formatter {
         Formatter.format = switch (formatForOut) {
             case "stylish" -> new Stylish();
             case "plain" -> new Plain();
+            case "json" -> new Json();
             default -> throw new IllegalArgumentException("This format for print differ isn't supported");
         };
     }

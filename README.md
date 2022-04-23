@@ -20,3 +20,5 @@
 ### How it works in plain format:
 [![asciicast](https://asciinema.org/a/IcjVwEM9mR9EjpgwlrZt4RkC2.svg)](https://asciinema.org/a/IcjVwEM9mR9EjpgwlrZt4RkC2) 
 
+### How it works in json format:
+[![asciicast](https://asciinema.org/a/1jc6GWgjgo9dz2YbCF4nbLiVT.svg)](https://asciinema.org/a/1jc6GWgjgo9dz2YbCF4nbLiVT)
