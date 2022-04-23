@@ -24,7 +24,8 @@ public final class Plain implements Format {
 
     @Override
     public String print() {
-        return result.toString();
+        String output = result.toString();
+        return output.substring(0, output.length() - 1);
     }
 
     private String editValue(Object value) {
