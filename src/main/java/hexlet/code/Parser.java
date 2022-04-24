@@ -13,7 +13,7 @@ public class Parser {
         JsonFactory factory = switch (fileType) {
             case "json" -> new JsonFactory();
             case "yml" -> new YAMLFactory();
-            default -> throw new IllegalArgumentException("This format isn't supported");
+            default -> throw new IllegalArgumentException(fileType + "file type isn't supported");
         };
         TypeReference<Map<String, Object>> token = new TypeReference<>() {
         };

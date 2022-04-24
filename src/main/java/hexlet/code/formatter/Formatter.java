@@ -8,7 +8,7 @@ public class Formatter {
             case "stylish" -> new StylishFormat();
             case "plain" -> new PlainFormat();
             case "json" -> new JsonFormat();
-            default -> throw new IllegalArgumentException("This format for print differ isn't supported");
+            default -> throw new IllegalArgumentException(formatForOut + "format for print differ isn't supported");
         };
     }
     public static void collectData(String modification, String key, Object value1, Object value2) {
