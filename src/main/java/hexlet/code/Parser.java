@@ -6,31 +6,19 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Map;
 
 public class Parser {
-    public static Map<String, Object> parse(String filePath) throws IOException {
-        String data = Files.readString(Paths.get(filePath).toAbsolutePath());
-        TypeReference<Map<String, Object>> token = new TypeReference<>() {
-        };
-        String fileType = determineFileType(filePath);
-
+    public static Map<String, Object> parse(String data, String fileType) throws IOException {
         JsonFactory factory = switch (fileType) {
             case "json" -> new JsonFactory();
             case "yml" -> new YAMLFactory();
             default -> throw new IllegalArgumentException("This format isn't supported");
         };
+        TypeReference<Map<String, Object>> token = new TypeReference<>() {
+        };
         ObjectMapper mapper = new ObjectMapper(factory);
         return mapper.readValue(data, token);
-    }
-
-    public static String determineFileType(String filePath) {
-        if (filePath.lastIndexOf(".") != 0) {
-            return filePath.substring(filePath.lastIndexOf(".") + 1);
-        }
-        return "";
     }
 }
 

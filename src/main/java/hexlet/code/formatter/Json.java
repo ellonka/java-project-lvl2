@@ -15,7 +15,7 @@ public final class Json implements Format {
     }
 
     @Override
-    public void collect(String modification, String key, Object value1, Object value2) {
+    public void collectData(String modification, String key, Object value1, Object value2) {
         result.put(key, new HashMap<>() {{
                     put(" - ", value1);
                     put(" + ", value2);
@@ -23,7 +23,7 @@ public final class Json implements Format {
     }
 
     @Override
-    public String print() {
+    public String prepareToPrint() {
         StringBuilder output = new StringBuilder();
         ObjectMapper objectMapper = new ObjectMapper();
         try {

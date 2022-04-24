@@ -12,9 +12,9 @@ public class Formatter {
         };
     }
     public static void collect(String modification, String key, Object value1, Object value2) {
-        format.collect(modification, key, value1, value2);
+        format.collectData(modification, key, value1, value2);
     }
     public static String print() {
-        return format.print();
+        return format.prepareToPrint();
     }
 }

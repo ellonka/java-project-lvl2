@@ -11,7 +11,7 @@ public final class Plain implements Format {
     }
 
     @Override
-    public void collect(String modification, String key, Object value1, Object value2) {
+    public void collectData(String modification, String key, Object value1, Object value2) {
         switch (modification) {
             case "ADDED" -> result.append("Property " + editValue(key) + " was added with value: "
                     + editValue(value2) + "\n");
@@ -23,7 +23,7 @@ public final class Plain implements Format {
     }
 
     @Override
-    public String print() {
+    public String prepareToPrint() {
         String output = result.toString();
         return output.substring(0, output.length() - 1);
     }
