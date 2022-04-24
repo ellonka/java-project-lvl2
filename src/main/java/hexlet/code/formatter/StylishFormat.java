@@ -1,9 +1,9 @@
 package hexlet.code.formatter;
 
-public final class Stylish implements Format {
+public final class StylishFormat implements Format {
     private StringBuilder result;
 
-    public Stylish() {
+    public StylishFormat() {
         result = new StringBuilder("{\n");
     }
 

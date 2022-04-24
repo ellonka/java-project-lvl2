@@ -5,16 +5,16 @@ public class Formatter {
 
     public static void chooseFormat(String formatForOut) {
         Formatter.format = switch (formatForOut) {
-            case "stylish" -> new Stylish();
-            case "plain" -> new Plain();
-            case "json" -> new Json();
+            case "stylish" -> new StylishFormat();
+            case "plain" -> new PlainFormat();
+            case "json" -> new JsonFormat();
             default -> throw new IllegalArgumentException("This format for print differ isn't supported");
         };
     }
-    public static void collect(String modification, String key, Object value1, Object value2) {
+    public static void collectData(String modification, String key, Object value1, Object value2) {
         format.collectData(modification, key, value1, value2);
     }
-    public static String print() {
+    public static String prepareToPrint() {
         return format.prepareToPrint();
     }
 }

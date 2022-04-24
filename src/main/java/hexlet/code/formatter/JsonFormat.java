@@ -7,10 +7,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-public final class Json implements Format {
+public final class JsonFormat implements Format {
     private Map<String, Map<String, Object>> result;
 
-    public Json() {
+    public JsonFormat() {
         result = new TreeMap<>();
     }
 

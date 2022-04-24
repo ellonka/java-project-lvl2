@@ -3,10 +3,10 @@ package hexlet.code.formatter;
 import java.util.Collection;
 import java.util.Map;
 
-public final class Plain implements Format {
+public final class PlainFormat implements Format {
     private StringBuilder result;
 
-    public Plain() {
+    public PlainFormat() {
         result = new StringBuilder();
     }
 
