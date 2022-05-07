@@ -21,4 +21,4 @@
 [![asciicast](https://asciinema.org/a/IcjVwEM9mR9EjpgwlrZt4RkC2.svg)](https://asciinema.org/a/IcjVwEM9mR9EjpgwlrZt4RkC2) 
 
 ### How it works in json format:
-[![asciicast](https://asciinema.org/a/1jc6GWgjgo9dz2YbCF4nbLiVT.svg)](https://asciinema.org/a/1jc6GWgjgo9dz2YbCF4nbLiVT)
+[![asciicast](https://asciinema.org/a/RdC7rHghRxm2q8DJTsp8H2UBo.svg)](https://asciinema.org/a/RdC7rHghRxm2q8DJTsp8H2UBo)
