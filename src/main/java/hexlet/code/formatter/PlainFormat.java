@@ -1,29 +1,24 @@
 package hexlet.code.formatter;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 public final class PlainFormat implements Format {
-    private StringBuilder result;
-
-    public PlainFormat() {
-        result = new StringBuilder();
-    }
-
     @Override
-    public void collectData(String modification, String key, Object value1, Object value2) {
-        switch (modification) {
-            case "ADDED" -> result.append("Property " + editValue(key) + " was added with value: "
-                    + editValue(value2) + "\n");
-            case "DELETED" -> result.append("Property " + editValue(key) + " was removed\n");
-            case "UPDATED" -> result.append("Property " + editValue(key) + " was updated. From "
-                    + editValue(value1) + " to " + editValue(value2) + "\n");
-            default -> result.append("");
+    public String prepareToPrint(List<Map<String, Object>> diff) {
+        StringBuilder result = new StringBuilder();
+
+        for (Map<String, Object> map: diff) {
+            switch ((String) map.get("status")) {
+                case "ADDED" -> result.append("Property " + editValue(map.get("key")) + " was added with value: "
+                        + editValue(map.get("value2")) + "\n");
+                case "DELETED" -> result.append("Property " + editValue(map.get("key")) + " was removed\n");
+                case "UPDATED" -> result.append("Property " + editValue(map.get("key")) + " was updated. From "
+                        + editValue(map.get("value1")) + " to " + editValue(map.get("value2")) + "\n");
+                default -> result.append("");
+            }
         }
-    }
-
-    @Override
-    public String prepareToPrint() {
         String output = result.toString();
         return output.substring(0, output.length() - 1);
     }

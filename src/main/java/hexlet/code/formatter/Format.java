@@ -1,6 +1,8 @@
 package hexlet.code.formatter;
 
+import java.util.List;
+import java.util.Map;
+
 public interface Format {
-    void collectData(String modification, String key, Object value1, Object value2);
-    String prepareToPrint();
+    String prepareToPrint(List<Map<String, Object>> diff);
 }

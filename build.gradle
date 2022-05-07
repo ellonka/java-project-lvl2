@@ -23,6 +23,10 @@ compileJava {
     options.release = 17
 }
 
+jacoco {
+    toolVersion = "0.8.8"
+}
+
 application {
     mainClass = 'hexlet.code.App'
 }
@@ -32,16 +36,18 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.2'
 
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter:5.8.2'
 
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
 }
 
 test {
+    finalizedBy jacocoTestReport
     useJUnitPlatform()
 }
 
 jacocoTestReport {
+    dependsOn test
     reports {
         xml.required = true
     }
