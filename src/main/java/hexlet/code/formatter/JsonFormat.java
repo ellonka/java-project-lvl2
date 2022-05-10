@@ -12,7 +12,7 @@ public final class JsonFormat implements Format {
         ObjectMapper objectMapper = new ObjectMapper();
         for (Map<String, Object> map: diff) {
             try {
-                output.append(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(map));
+                output.append(objectMapper.writeValueAsString(map));
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
             }
