@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.TreeMap;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.Objects;
 
 public class Differ {
@@ -32,15 +33,24 @@ public class Differ {
 
         for (String key: exchanger.keySet()) {
             if (!map1.containsKey(key)) {
-                diff.add(Collector.createDiff(key, "ADDED", map1.get(key), map2.get(key)));
+                diff.add(createNode(key, "ADDED", map1.get(key), map2.get(key)));
             } else if (!map2.containsKey(key)) {
-                diff.add(Collector.createDiff(key, "DELETED", map1.get(key), map2.get(key)));
+                diff.add(createNode(key, "DELETED", map1.get(key), map2.get(key)));
             } else if (Objects.equals(map2.get(key), map1.get(key))) {
-                diff.add(Collector.createDiff(key, "UNCHANGED", map1.get(key), map2.get(key)));
+                diff.add(createNode(key, "UNCHANGED", map1.get(key), map2.get(key)));
             } else {
-                diff.add(Collector.createDiff(key, "UPDATED", map1.get(key), map2.get(key)));
+                diff.add(createNode(key, "UPDATED", map1.get(key), map2.get(key)));
             }
         }
         return diff;
+    }
+
+    private static Map<String, Object> createNode(String key, String status, Object value1, Object value2) {
+        Map<String, Object> collector = new LinkedHashMap<>();
+        collector.put("key", key);
+        collector.put("status", status);
+        collector.put("value1", value1);
+        collector.put("value2", value2);
+        return collector;
     }
 }
